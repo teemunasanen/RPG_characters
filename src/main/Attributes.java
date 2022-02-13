@@ -11,6 +11,7 @@ public class Attributes {
         this.intelligence = intelligence;
     }
 
+
     public int getStrength() {
         return strength;
     }
