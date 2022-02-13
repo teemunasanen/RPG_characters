@@ -8,16 +8,15 @@ package main;
         1        4           1
     RECALL: Rogues deal increased damage for every point of Dexterity*/
 
-public class Rogue extends Hero{
+public class Rogue extends Hero {
 
     public Rogue(String name) {
-        super(name, "Rogue",new Attributes(2,6,1));
-
+        super(name, "Rogue", new Attributes(2, 6, 1));
     }
 
     @Override
     public void levelUp() {
         this.setLevel(this.getLevel() + 1);
-        this.setBaseAttributes(1,4,1);
+        this.setBaseAttributes(1, 4, 1);
     }
 }

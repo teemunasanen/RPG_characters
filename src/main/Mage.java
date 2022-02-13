@@ -11,12 +11,12 @@ package main;
 public class Mage extends Hero {
 
     public Mage(String name) {
-        super(name, "Mage", new Attributes(1,1,8));
+        super(name, "Mage", new Attributes(1, 1, 8));
     }
 
     @Override
     public void levelUp() {
         this.setLevel(this.getLevel() + 1);
-        this.setBaseAttributes(1,1,5);
+        this.setBaseAttributes(1, 1, 5);
     }
 }

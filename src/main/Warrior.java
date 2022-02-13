@@ -13,13 +13,12 @@ package main;
 public class Warrior extends Hero {
 
     public Warrior(String name) {
-        super(name, "Warrior", new Attributes(5,2,1));
-
+        super(name, "Warrior", new Attributes(5, 2, 1));
     }
 
     @Override
     public void levelUp() {
         this.setLevel(this.getLevel() + 1);
-        this.setBaseAttributes(3,2,1);
+        this.setBaseAttributes(3, 2, 1);
     }
 }
