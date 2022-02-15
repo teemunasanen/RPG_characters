@@ -38,10 +38,10 @@ public abstract class Hero {
         this.base = base;
     }
 
-    public void setTotalAttributes() {
-        this.total.setStrength(this.base.getStrength());
-        this.total.setDexterity(this.base.getDexterity());
-        this.total.setIntelligence(this.base.getIntelligence());
+    public void setTotalAttributes(int strength, int dexterity, int intelligence) {
+        this.total.setStrength(this.base.getStrength() + strength);
+        this.total.setDexterity(this.base.getDexterity() + dexterity);
+        this.total.setIntelligence(this.base.getIntelligence() + intelligence);
     }
 
 

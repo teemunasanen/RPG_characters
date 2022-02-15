@@ -20,6 +20,10 @@ public class Armor extends Item {
         return type;
     }
 
+    public PrimaryAttribute getExtraShield() {
+        return extraShield;
+    }
+
     public Armor(String name, Integer levelRequired, Slot slot, ArmorType type, int strength, int dexterity, int intelligence) {
         this.setName(name);
         this.setLevelRequired(levelRequired);

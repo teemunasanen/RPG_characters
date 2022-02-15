@@ -46,5 +46,9 @@ public class Main {
         warrior.equipItem(testWeapon);
 
         System.out.println(mage.getEquipment());
+        System.out.println(ranger);
+        System.out.println(mage);
+        System.out.println(rogue);
+        System.out.println(warrior);
     }
 }
