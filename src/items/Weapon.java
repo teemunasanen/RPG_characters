@@ -5,7 +5,7 @@ public class Weapon extends Item {
    private WeaponType type;
    private int damage;
    private double attackSpeed;
-   private double weaponDPS = damage * attackSpeed;
+   private double weaponDPS;   // Damage per second, this could be rounded to two decimals later
 
     // There are several types of weapons which exist:
     public enum WeaponType{
@@ -25,6 +25,7 @@ public class Weapon extends Item {
         this.damage = damage;
         this.attackSpeed = attackSpeed;
         this.setSlot(Slot.WEAPON);
+        this.weaponDPS = damage * attackSpeed;
 
     }
 
