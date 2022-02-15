@@ -28,7 +28,8 @@ public abstract class Hero {
 
     // Total Primary attributes initialized (Total attribute = base + attributes from all equipped armor)
     private PrimaryAttribute total = new PrimaryAttribute(0, 0, 0);
-    // private double dps;
+
+    private double heroDPS;
 
     private HashMap<Item.Slot, Item> equipment = new HashMap<>();
 
@@ -78,20 +79,28 @@ public abstract class Hero {
         return level;
     }
 
+    public float getHeroDPS() {
+        Weapon weapon = (Weapon) this.equipment.get(Item.Slot.WEAPON);
+
+        if (weapon == null) {
+            this.heroDPS = (1 + (this.increasedDamageAttribute / 100f));
+        } else {
+            this.heroDPS = weapon.getWeaponDPS() * (1 + (this.increasedDamageAttribute / 100f));
+        }
+
+        return (float) heroDPS;
+    }
+
 
     @Override
     public String toString() {
-        return type + "{" +
-                "Hero name='" + name + '\'' +
-                ", Hero level=" + level +
-                ", Strength=" + base.getStrength() +
-                ", Dexterity=" + base.getDexterity() +
-                ", Intelligence=" + base.getIntelligence() +
-                ", totalStrength=" + total.getStrength() +
-                ", totalDexterity=" + total.getDexterity() +
-                ", totalIntelligence=" + total.getIntelligence() +
-//                ", DPS=" + dps +
-                '}';
+        return
+                "Hero name:" + name + "\n" +
+                        "Hero level: " + level + "\n" +
+                        "Strength: " + total.getStrength() + "\n" +
+                        "Dexterity: " + total.getDexterity() + "\n" +
+                        "Intelligence: " + total.getIntelligence() + "\n" +
+                        "DPS: " + getHeroDPS();
     }
 
 }

@@ -15,7 +15,7 @@ public abstract class Item {
     private Integer levelRequired;
     private Slot slot;
 
-    public enum Slot{
+    public enum Slot {
         HEAD,
         BODY,
         LEGS,
