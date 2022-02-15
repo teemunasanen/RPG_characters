@@ -1,5 +1,7 @@
 package main;
 
+import exceptions.InvalidArmorException;
+import exceptions.InvalidWeaponException;
 import heroes.Mage;
 import heroes.Ranger;
 import heroes.Rogue;
@@ -10,7 +12,7 @@ import items.Weapon;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidArmorException, InvalidWeaponException {
         Mage mage = new Mage("mage");
         Ranger ranger = new Ranger("ranger");
         Rogue rogue = new Rogue("rogue");
@@ -38,10 +40,10 @@ public class Main {
         Weapon testBow = new Weapon("Common Bow", 1, Item.Slot.WEAPON, Weapon.WeaponType.BOW, 12, 0.8);
         Armor testClothHead = new Armor("Common Cloth Head Armor", 1, Item.Slot.HEAD, Armor.ArmorType.CLOTH,1,1,1);
 
-        mage.equipItem(testPlateBody);
-        mage.equipItem(testBow);
+        warrior.equipItem(testPlateBody);
+        ranger.equipItem(testBow);
         mage.equipItem(testClothHead);
-        mage.equipItem(testWeapon);
+        warrior.equipItem(testWeapon);
 
         System.out.println(mage.getEquipment());
     }

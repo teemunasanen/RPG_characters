@@ -9,7 +9,11 @@ package heroes;
     */
 
 import attributes.PrimaryAttribute;
+import exceptions.InvalidArmorException;
+import exceptions.InvalidWeaponException;
+import items.Armor;
 import items.Item;
+import items.Weapon;
 
 import java.util.HashMap;
 
@@ -24,7 +28,6 @@ public abstract class Hero {
     // Total Primary attributes initialized
     private PrimaryAttribute total = new PrimaryAttribute(0, 0, 0);
     // private double dps;
-
 
     private HashMap<Item.Slot, Item> equipment = new HashMap<>();
 
@@ -55,11 +58,13 @@ public abstract class Hero {
 
     public abstract void levelUp();
 
-    public abstract void equipItem(items.Armor armor);
+    public abstract void equipItem(Armor armor) throws InvalidArmorException;
 
-    public abstract void equipItem(items.Weapon weapon);
+    public abstract void equipItem(Weapon weapon) throws InvalidWeaponException;
 
-
+    public String getType() {
+        return type;
+    }
 
     public void setLevel(int level) {
         this.level = level;
