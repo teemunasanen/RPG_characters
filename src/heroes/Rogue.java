@@ -18,14 +18,16 @@ public class Rogue extends Hero {
 
     public Rogue(String name) {
         super(name, "Rogue", new PrimaryAttribute(2, 6, 1));
-        this.setTotalAttributes(0,0,0);
+        this.setTotalAttributes(0,0,0);// updates total Attributes
+        this.increasedDamageAttribute = this.getTotal().getDexterity();
     }
 
     @Override
     public void levelUp() {
         this.setLevel(this.getLevel() + 1);
         this.setBaseAttributes(1, 4, 1);
-        this.setTotalAttributes(0,0,0);
+        this.setTotalAttributes(0,0,0);// updates total Attributes
+        this.increasedDamageAttribute = this.getTotal().getDexterity();
     }
 
     @Override
@@ -35,6 +37,7 @@ public class Rogue extends Hero {
         } else if (armor.getType() == Armor.ArmorType.LEATHER || armor.getType() == Armor.ArmorType.MAIL) {
             this.getEquipment().put(armor.getSlot(), armor);
             this.setTotalAttributes(armor.getExtraShield().getStrength(),armor.getExtraShield().getDexterity(), armor.getExtraShield().getIntelligence());
+            this.increasedDamageAttribute = this.getTotal().getDexterity();
         }else{
             throw new InvalidArmorException(this.getType() + " can't wear " + armor.getType() + " type of armour. LEATHER and MAIL are wearable.");
         }

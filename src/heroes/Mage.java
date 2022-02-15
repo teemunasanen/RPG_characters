@@ -17,9 +17,11 @@ import items.Weapon;
 public class Mage extends Hero {
 
 
+
     public Mage(String name) {
         super(name, "Mage", new PrimaryAttribute(1, 1, 8));
-        this.setTotalAttributes(0,0,0);
+        this.setTotalAttributes(0,0,0);// updates total Attributes
+        this.increasedDamageAttribute = this.getTotal().getIntelligence();
 
     }
 
@@ -27,7 +29,8 @@ public class Mage extends Hero {
     public void levelUp() {
         this.setLevel(this.getLevel() + 1);
         this.setBaseAttributes(1, 1, 5);
-        this.setTotalAttributes(0,0,0);
+        this.setTotalAttributes(0,0,0);// updates total Attributes
+        this.increasedDamageAttribute = this.getTotal().getIntelligence();
     }
 
     @Override
@@ -37,6 +40,7 @@ public class Mage extends Hero {
         } else if (armor.getType() == Armor.ArmorType.CLOTH) {
             this.getEquipment().put(armor.getSlot(), armor);
             this.setTotalAttributes(armor.getExtraShield().getStrength(),armor.getExtraShield().getDexterity(), armor.getExtraShield().getIntelligence());
+            this.increasedDamageAttribute = this.getTotal().getIntelligence();
         }else{
             throw new InvalidArmorException(this.getType() + " can't wear " + armor.getType() + " type of armour. CLOTH is wearable.");
         }

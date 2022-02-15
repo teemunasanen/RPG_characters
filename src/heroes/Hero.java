@@ -21,11 +21,12 @@ public abstract class Hero {
     private final String name;
     private int level = 1; // Every hero starts at level 1
     private final String type;
+    protected int increasedDamageAttribute;
 
     // Base Primary attributes
     private PrimaryAttribute base;
 
-    // Total Primary attributes initialized
+    // Total Primary attributes initialized (Total attribute = base + attributes from all equipped armor)
     private PrimaryAttribute total = new PrimaryAttribute(0, 0, 0);
     // private double dps;
 
@@ -44,6 +45,9 @@ public abstract class Hero {
         this.total.setIntelligence(this.base.getIntelligence() + intelligence);
     }
 
+    public PrimaryAttribute getTotal() {
+        return total;
+    }
 
     public void setBaseAttributes(int strength, int dexterity, int intelligence) {
         this.base.setStrength(this.base.getStrength() + strength);
