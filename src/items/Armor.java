@@ -8,8 +8,8 @@ public class Armor extends Item {
     private PrimaryAttribute extraShield;
 
 
-   // There are several types of Armor that exist:
-    public enum ArmorType{
+    // There are several types of Armor that exist:
+    public enum ArmorType {
         CLOTH,
         LEATHER,
         MAIL,

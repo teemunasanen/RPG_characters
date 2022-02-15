@@ -2,13 +2,13 @@ package items;
 
 
 public class Weapon extends Item {
-   private WeaponType type;
-   private int damage;
-   private double attackSpeed;
-   private double weaponDPS;   // Damage per second, this could be rounded to two decimals later
+    private WeaponType type;
+    private int damage;
+    private double attackSpeed;
+    private double weaponDPS;   // Damage per second, this could be rounded to two decimals later
 
     // There are several types of weapons which exist:
-    public enum WeaponType{
+    public enum WeaponType {
         AXE,
         BOW,
         DAGGER,
@@ -18,7 +18,7 @@ public class Weapon extends Item {
         WAND
     }
 
-    public Weapon(String name, Integer levelRequired,Slot slot, WeaponType type,  int damage, double attackSpeed) {
+    public Weapon(String name, Integer levelRequired, Slot slot, WeaponType type, int damage, double attackSpeed) {
         this.setName(name);
         this.setLevelRequired(levelRequired);
         this.type = type;
