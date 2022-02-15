@@ -16,6 +16,10 @@ public class Armor extends Item {
         PLATE
     }
 
+    public ArmorType getType() {
+        return type;
+    }
+
     public Armor(String name, Integer levelRequired, Slot slot, ArmorType type, int strength, int dexterity, int intelligence) {
         this.setName(name);
         this.setLevelRequired(levelRequired);
