@@ -20,14 +20,16 @@ public class Warrior extends Hero {
 
     public Warrior(String name) {
         super(name, "Warrior", new PrimaryAttribute(5, 2, 1));
-        this.setTotalAttributes(0,0,0);
+        this.setTotalAttributes(0,0,0);// updates total Attributes
+        this.increasedDamageAttribute = this.getTotal().getStrength();
     }
 
     @Override
     public void levelUp() {
         this.setLevel(this.getLevel() + 1);
         this.setBaseAttributes(3, 2, 1);
-        this.setTotalAttributes(0,0,0);
+        this.setTotalAttributes(0,0,0);// updates total Attributes
+        this.increasedDamageAttribute = this.getTotal().getStrength();
     }
 
     @Override
@@ -37,6 +39,7 @@ public class Warrior extends Hero {
         } else if (armor.getType() == Armor.ArmorType.MAIL || armor.getType() == Armor.ArmorType.PLATE) {
             this.getEquipment().put(armor.getSlot(), armor);
             this.setTotalAttributes(armor.getExtraShield().getStrength(),armor.getExtraShield().getDexterity(), armor.getExtraShield().getIntelligence());
+            this.increasedDamageAttribute = this.getTotal().getStrength();
         }else{
             throw new InvalidArmorException(this.getType() + " can't wear " + armor.getType() + " type of armour. MAIL or PLATE are wearable.");
         }

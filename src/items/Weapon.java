@@ -5,7 +5,7 @@ public class Weapon extends Item {
    private WeaponType type;
    private int damage;
    private double attackSpeed;
-
+   private double weaponDPS = damage * attackSpeed;
 
     // There are several types of weapons which exist:
     public enum WeaponType{
@@ -30,6 +30,10 @@ public class Weapon extends Item {
 
     public WeaponType getType() {
         return type;
+    }
+
+    public double getWeaponDPS() {
+        return weaponDPS;
     }
 
     public void setType(WeaponType type) {
