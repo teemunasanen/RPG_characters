@@ -1,11 +1,11 @@
-package main;
+package attributes;
 
-public class Attributes {
+public class PrimaryAttribute {
     private int strength;
     private int dexterity;
     private int intelligence;
 
-    public Attributes(int strength, int dexterity, int intelligence) {
+    public PrimaryAttribute(int strength, int dexterity, int intelligence) {
         this.strength = strength;
         this.dexterity = dexterity;
         this.intelligence = intelligence;

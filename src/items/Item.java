@@ -1,4 +1,4 @@
-package main;
+package items;
 
 /*All items have:
         • Name
@@ -13,13 +13,15 @@ package main;
 public abstract class Item {
     private String name;
     private Integer levelRequired;
-    //private Slot slot;
+    private Slot slot;
 
-
-    public Item(String name, Integer levelRequired) {
-        this.name = name;
-        this.levelRequired = levelRequired;
+    public enum Slot{
+        HEAD,
+        BODY,
+        LEGS,
+        WEAPON
     }
+
 
     public String getName() {
         return name;
@@ -35,5 +37,13 @@ public abstract class Item {
 
     public void setLevelRequired(Integer levelRequired) {
         this.levelRequired = levelRequired;
+    }
+
+    public Slot getSlot() {
+        return slot;
+    }
+
+    public void setSlot(Slot slot) {
+        this.slot = slot;
     }
 }

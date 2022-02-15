@@ -1,4 +1,4 @@
-package main;
+package items;
 
 
 public class Weapon extends Item {
@@ -6,8 +6,9 @@ public class Weapon extends Item {
    private int damage;
    private double attackSpeed;
 
+
     // There are several types of weapons which exist:
-    enum WeaponType{
+    public enum WeaponType{
         AXE,
         BOW,
         DAGGER,
@@ -17,11 +18,14 @@ public class Weapon extends Item {
         WAND
     }
 
-    public Weapon(String name, Integer levelRequired, WeaponType type, int damage, double attackSpeed) {
-        super(name, levelRequired);
+    public Weapon(String name, Integer levelRequired,Slot slot, WeaponType type,  int damage, double attackSpeed) {
+        this.setName(name);
+        this.setLevelRequired(levelRequired);
         this.type = type;
         this.damage = damage;
         this.attackSpeed = attackSpeed;
+        this.setSlot(Slot.WEAPON);
+
     }
 
     public WeaponType getType() {

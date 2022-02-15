@@ -1,4 +1,4 @@
-package main;
+package heroes;
 
     /*
     All characters have the following properties:
@@ -8,42 +8,62 @@ package main;
         • Total Primary attributes
     */
 
-public abstract class Hero implements Improvable {
+import attributes.PrimaryAttribute;
+import items.Item;
+
+import java.util.HashMap;
+
+public abstract class Hero {
     private final String name;
     private int level = 1; // Every hero starts at level 1
     private final String type;
 
     // Base Primary attributes
-    private Attributes base;
+    private PrimaryAttribute base;
 
     // Total Primary attributes initialized
-    private Attributes total = new Attributes(0, 0, 0);
+    private PrimaryAttribute total = new PrimaryAttribute(0, 0, 0);
     // private double dps;
 
+
+    private HashMap<Item.Slot, Item> equipment = new HashMap<>();
+
     // Constructor with required fields and initializing base attributes
-    public Hero(String name, String type, Attributes base) {
+    public Hero(String name, String type, PrimaryAttribute base) {
         this.name = name;
         this.type = type;
         this.base = base;
     }
 
-    public void setTotalAttributes(int strength, int dexterity, int intelligence) {
-        this.total.setStrength(this.base.getStrength() + strength);
-        this.total.setDexterity(this.base.getDexterity() + dexterity);
-        this.total.setIntelligence(this.base.getIntelligence() + intelligence);
+    public void setTotalAttributes() {
+        this.total.setStrength(this.base.getStrength());
+        this.total.setDexterity(this.base.getDexterity());
+        this.total.setIntelligence(this.base.getIntelligence());
     }
 
-    // Setter for baseAttribute private field values when leveling up
+
     public void setBaseAttributes(int strength, int dexterity, int intelligence) {
         this.base.setStrength(this.base.getStrength() + strength);
         this.base.setDexterity(this.base.getDexterity() + dexterity);
         this.base.setIntelligence(this.base.getIntelligence() + intelligence);
     }
 
+    public HashMap<Item.Slot, Item> getEquipment() {
+        return equipment;
+    }
+
+
+    public abstract void levelUp();
+
+    public abstract void equipItem(items.Armor armor);
+
+    public abstract void equipItem(items.Weapon weapon);
+
+
+
     public void setLevel(int level) {
         this.level = level;
     }
-
 
     public int getLevel() {
         return level;
@@ -58,6 +78,9 @@ public abstract class Hero implements Improvable {
                 ", Strength=" + base.getStrength() +
                 ", Dexterity=" + base.getDexterity() +
                 ", Intelligence=" + base.getIntelligence() +
+                ", totalStrength=" + total.getStrength() +
+                ", totalDexterity=" + total.getDexterity() +
+                ", totalIntelligence=" + total.getIntelligence() +
 //                ", DPS=" + dps +
                 '}';
     }
