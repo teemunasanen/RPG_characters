@@ -52,6 +52,7 @@ public class Main {
         System.out.println(warrior);
         System.out.println(testWeapon.getWeaponDPS());
         System.out.println(testBow.getWeaponDPS());
+        System.out.println(ranger.getTotal());
 
 
 
