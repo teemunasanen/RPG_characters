@@ -1,13 +1,5 @@
 package heroes;
 
-/*A Ranger begins at level 1 with:
-        Strength Dexterity Intelligence
-            1         7          1
-        Every time a Ranger levels up, they gain:
-        Strength Dexterity Intelligence
-            1         5          1
-        RECALL: Rangers deal increased damage for every point of Dexterity.*/
-
 import attributes.PrimaryAttribute;
 import exceptions.InvalidArmorException;
 import exceptions.InvalidWeaponException;
@@ -55,5 +47,4 @@ public class Ranger extends Hero {
             throw new InvalidWeaponException(this.getClass() + " can't use this type of weapon. BOW only.");
         }
     }
-
 }

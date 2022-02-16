@@ -1,15 +1,5 @@
 package items;
 
-/*All items have:
-        • Name
-        • Required level to equip the item.
-        • Slot in which the item is equipped.
-
-        There are two types of items which exist:
-        • Weapons
-        • Armor
-*/
-
 public abstract class Item {
     private String name;
     private Integer levelRequired;
@@ -21,7 +11,6 @@ public abstract class Item {
         LEGS,
         WEAPON
     }
-
 
     public String getName() {
         return name;

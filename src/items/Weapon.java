@@ -26,7 +26,6 @@ public class Weapon extends Item {
         this.attackSpeed = attackSpeed;
         this.setSlot(Slot.WEAPON);
         this.weaponDPS = damage * attackSpeed;
-
     }
 
     public WeaponType getType() {

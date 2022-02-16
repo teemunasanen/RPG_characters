@@ -1,13 +1,5 @@
 package heroes;
 
-/*    A Rogue begins at level 1 with:
-    Strength Dexterity Intelligence
-        2        6           1
-    Every time a Rogue levels up, they gain:
-    Strength Dexterity Intelligence
-        1        4           1
-    RECALL: Rogues deal increased damage for every point of Dexterity*/
-
 import attributes.PrimaryAttribute;
 import exceptions.InvalidArmorException;
 import exceptions.InvalidWeaponException;

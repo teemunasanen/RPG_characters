@@ -11,7 +11,6 @@ public class PrimaryAttribute {
         this.intelligence = intelligence;
     }
 
-
     public int getStrength() {
         return strength;
     }

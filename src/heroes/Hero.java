@@ -1,13 +1,5 @@
 package heroes;
 
-    /*
-    All characters have the following properties:
-        • Name
-        • Level
-        • Base Primary attributes
-        • Total Primary attributes
-    */
-
 import attributes.PrimaryAttribute;
 import exceptions.InvalidArmorException;
 import exceptions.InvalidWeaponException;
@@ -29,16 +21,21 @@ public abstract class Hero {
     // Total Primary attributes initialized (Total attribute = base + attributes from all equipped armor)
     private PrimaryAttribute total = new PrimaryAttribute(0, 0, 0);
 
-    private double heroDPS;
+    private double heroDPS; // hero damage per second (includes items)
 
     private HashMap<Item.Slot, Item> equipment = new HashMap<>();
 
-    // Constructor with required fields and initializing base attributes
     public Hero(String name, String type, PrimaryAttribute base) {
         this.name = name;
         this.type = type;
         this.base = base;
     }
+
+    public abstract void levelUp();
+
+    public abstract boolean equipItem(Armor armor) throws InvalidArmorException;
+
+    public abstract boolean equipItem(Weapon weapon) throws InvalidWeaponException;
 
     public void setTotalAttributes(int strength, int dexterity, int intelligence) {
         this.total.setStrength(this.base.getStrength() + strength);
@@ -59,13 +56,6 @@ public abstract class Hero {
     public HashMap<Item.Slot, Item> getEquipment() {
         return equipment;
     }
-
-
-    public abstract void levelUp();
-
-    public abstract boolean equipItem(Armor armor) throws InvalidArmorException;
-
-    public abstract boolean equipItem(Weapon weapon) throws InvalidWeaponException;
 
     public String getType() {
         return type;
@@ -91,7 +81,6 @@ public abstract class Hero {
         return (float) heroDPS;
     }
 
-
     @Override
     public String toString() {
         return
@@ -102,5 +91,4 @@ public abstract class Hero {
                         "Intelligence: " + total.getIntelligence() + "\n" +
                         "DPS: " + getHeroDPS();
     }
-
 }

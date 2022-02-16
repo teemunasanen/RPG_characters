@@ -7,7 +7,6 @@ public class Armor extends Item {
     private ArmorType type;
     private PrimaryAttribute extraShield;
 
-
     // There are several types of Armor that exist:
     public enum ArmorType {
         CLOTH,
@@ -30,6 +29,5 @@ public class Armor extends Item {
         this.type = type;
         this.setSlot(slot);
         this.extraShield = new PrimaryAttribute(strength, dexterity, intelligence);
-
     }
 }
