@@ -13,6 +13,10 @@ import items.Weapon;
 public class Main {
 
     public static void main(String[] args) throws InvalidArmorException, InvalidWeaponException {
+
+/*
+        ------Example------
+
         Mage mage = new Mage("mage");
         Ranger ranger = new Ranger("ranger");
         Rogue rogue = new Rogue("rogue");
@@ -45,17 +49,12 @@ public class Main {
         mage.equipItem(testClothHead);
         warrior.equipItem(testWeapon);
 
-        System.out.println(mage.getEquipment());
         System.out.println(ranger);
         System.out.println(mage);
         System.out.println(rogue);
         System.out.println(warrior);
-        System.out.println(testWeapon.getWeaponDPS());
-        System.out.println(testBow.getWeaponDPS());
-        System.out.println(ranger.getTotal());
 
-
-
-
+        ------Example------
+        */
     }
 }

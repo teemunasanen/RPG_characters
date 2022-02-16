@@ -1,15 +1,5 @@
 package heroes;
 
-/*    A Warrior begins at level 1 with:
-    Strength Dexterity Intelligence
-        5         2           1
-
-    Every time a Warrior levels up, they gain:
-    Strength Dexterity Intelligence
-        3         2           1
-
-    RECALL: Warriors deal increased damage for every point of Strength.*/
-
 import attributes.PrimaryAttribute;
 import exceptions.InvalidArmorException;
 import exceptions.InvalidWeaponException;

@@ -1,13 +1,5 @@
 package heroes;
 
-/*A Mage begins at level 1 with:
-        Strength Dexterity Intelligence
-            1        1           8
-        Every time a Mage levels up, they gain:
-        Strength Dexterity Intelligence
-            1        1           5
-        RECALL: Mages deal increased damage for every point of Intelligence.*/
-
 import attributes.PrimaryAttribute;
 import exceptions.InvalidArmorException;
 import exceptions.InvalidWeaponException;
@@ -21,7 +13,6 @@ public class Mage extends Hero {
         super(name, "Mage", new PrimaryAttribute(1, 1, 8));
         this.setTotalAttributes(0, 0, 0);// updates total Attributes
         this.increasedDamageAttribute = this.getTotal().getIntelligence();
-
     }
 
     @Override
@@ -57,5 +48,4 @@ public class Mage extends Hero {
             throw new InvalidWeaponException(this.getClass() + " can't use this type of weapon. " + Weapon.WeaponType.STAFF + " or " + Weapon.WeaponType.WAND + " only.");
         }
     }
-
 }

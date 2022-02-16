@@ -11,7 +11,7 @@ Hero and Items are constructed with required fields. Hero stats are displayed th
 
 Built with IntelliJ idea U ltimate and JDK 17.
 
-![Class Diagram from IntelliJ](./assets/Hero_classDiagram_IntelliJ.PNG)
+![Class Diagram from IntelliJ](./assets/classDiagram_intelliJ.PNG)
 
 
 ## Table of Contents
