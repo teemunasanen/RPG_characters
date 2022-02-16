@@ -63,9 +63,9 @@ public abstract class Hero {
 
     public abstract void levelUp();
 
-    public abstract void equipItem(Armor armor) throws InvalidArmorException;
+    public abstract boolean equipItem(Armor armor) throws InvalidArmorException;
 
-    public abstract void equipItem(Weapon weapon) throws InvalidWeaponException;
+    public abstract boolean equipItem(Weapon weapon) throws InvalidWeaponException;
 
     public String getType() {
         return type;
